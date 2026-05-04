@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob {
     /// A compiled glob pattern segment (between path separators).
     ///
@@ -30,4 +29,3 @@ extension Glob {
         case doubleStar
     }
 }
-

@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 import ASCII_Primitives
 
 extension Glob {
@@ -264,4 +263,3 @@ extension Glob.Pattern {
         )
     }
 }
-

@@ -9,9 +9,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob.Options {
     /// Namespace for error-related options.
     public enum Error {}
 }
-

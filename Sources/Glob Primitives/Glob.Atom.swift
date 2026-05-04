@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob {
     /// An atom within a pattern segment.
     ///
@@ -31,4 +30,3 @@ extension Glob {
         case scalar(Scalar.Class)
     }
 }
-

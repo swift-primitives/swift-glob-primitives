@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob.Scalar {
     /// A character class operating on Unicode scalar values.
     ///
@@ -63,4 +62,3 @@ extension Glob.Scalar.Class {
         return negated ? !inClass : inClass
     }
 }
-

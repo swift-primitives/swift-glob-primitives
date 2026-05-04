@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob.Options.Error {
     /// Error handling policy during traversal.
     public enum Policy: Sendable, Hashable {
@@ -20,4 +19,3 @@ extension Glob.Options.Error {
         case skip
     }
 }
-

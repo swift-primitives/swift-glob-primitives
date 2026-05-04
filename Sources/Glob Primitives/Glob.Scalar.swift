@@ -9,9 +9,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob {
     /// Namespace for scalar-level operations.
     public enum Scalar {}
 }
-

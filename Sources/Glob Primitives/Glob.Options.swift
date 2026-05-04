@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob {
     /// Options for glob pattern matching.
     ///
@@ -78,4 +77,3 @@ extension Glob {
         }
     }
 }
-

@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob.Options {
     /// Dotfile (hidden file) matching behavior.
     ///
@@ -33,4 +32,3 @@ extension Glob.Options {
         case never
     }
 }
-

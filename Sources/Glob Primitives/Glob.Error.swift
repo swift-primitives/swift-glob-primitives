@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob {
     /// Errors that can occur during glob operations.
     ///
@@ -41,4 +40,3 @@ extension Glob {
         case io(path: Swift.String, category: IO)
     }
 }
-

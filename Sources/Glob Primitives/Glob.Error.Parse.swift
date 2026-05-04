@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob.Error {
     /// Pattern parse error reasons.
     public enum Parse: Sendable, Hashable {
@@ -29,4 +28,3 @@ extension Glob.Error {
         case invalidEscape
     }
 }
-

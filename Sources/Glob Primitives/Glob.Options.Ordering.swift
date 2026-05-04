@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob.Options {
     /// Result ordering policy.
     public enum Ordering: Sendable, Hashable {
@@ -26,4 +25,3 @@ extension Glob.Options {
         case filesystemOrder
     }
 }
-

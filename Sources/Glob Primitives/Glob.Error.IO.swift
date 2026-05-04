@@ -9,7 +9,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-
 extension Glob.Error {
     /// Stable I/O error categories (not raw errno/Win32 codes).
     ///
@@ -32,4 +31,3 @@ extension Glob.Error {
         case other
     }
 }
-
