@@ -1,0 +1,7 @@
+# .github/metadata.yaml
+description: "Glob pattern types for Swift, supporting POSIX wildcards, recursive `**`, and Unicode-scalar character classes."
+topics:
+  - primitives
+  - parsing
+  - file-system
+homepage: "https://swift-institute.org"
