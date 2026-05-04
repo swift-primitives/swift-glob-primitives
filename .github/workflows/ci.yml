@@ -27,11 +27,6 @@ jobs:
   docs:
     uses: swift-institute/.github/.github/workflows/swift-docs.yml@main
     with:
-      umbrella-module: Glob_Primitives
-      umbrella-display-name: "Glob Primitives"
-      umbrella-bundle-id: "swift-glob-primitives.Glob-Primitives"
-      umbrella-docc-path: "Sources/Glob Primitives/Glob Primitives.docc"
-      exclude-modules: ""
       enable-private-repos: true
     secrets:
       PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
