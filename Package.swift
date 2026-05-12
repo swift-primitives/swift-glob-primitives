@@ -39,6 +39,10 @@ let package = Package(
             name: "Glob Primitives",
             targets: ["Glob Primitives"]
         ),
+        .library(
+            name: "Glob Primitives Standard Library Integration",
+            targets: ["Glob Primitives Standard Library Integration"]
+        ),
     ],
     dependencies: [
         .package(path: "../swift-ascii-primitives"),
@@ -48,6 +52,12 @@ let package = Package(
             name: "Glob Primitives",
             dependencies: [
                 .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
+            ]
+        ),
+        .target(
+            name: "Glob Primitives Standard Library Integration",
+            dependencies: [
+                "Glob Primitives",
             ]
         ),
     ],
