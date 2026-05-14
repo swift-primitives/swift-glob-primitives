@@ -45,13 +45,17 @@ let package = Package(
         ),
     ],
     dependencies: [
+        .package(path: "../swift-array-primitives"),
         .package(path: "../swift-ascii-primitives"),
+        .package(path: "../swift-parser-primitives"),
     ],
     targets: [
         .target(
             name: "Glob Primitives",
             dependencies: [
+                .product(name: "Array Dynamic Primitives", package: "swift-array-primitives"),
                 .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
+                .product(name: "Parser Primitives", package: "swift-parser-primitives"),
             ]
         ),
         .target(
