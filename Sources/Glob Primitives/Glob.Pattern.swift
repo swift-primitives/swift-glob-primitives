@@ -10,6 +10,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import Array_Dynamic_Primitives
+public import Byte_Parser_Primitives
 public import Parser_Primitives
 
 extension Glob {
@@ -51,7 +52,7 @@ extension Glob.Pattern {
     /// Creates a pattern from a string.
     ///
     /// String adapter over ``Glob/Pattern/Parser``. Constructs a
-    /// `Parser_Primitives_Core.Parser.Input.Bytes` over the string's
+    /// `Byte.Input` over the string's
     /// UTF-8 view and runs the canonical parser; the parser consumes
     /// the entire input as the glob pattern, so no trailing-bytes
     /// assertion is needed.
@@ -65,7 +66,7 @@ extension Glob.Pattern {
     /// - Throws: ``Glob/Error`` if the pattern is invalid.
     @inlinable
     public init(_ pattern: Swift.String) throws(Glob.Error) {
-        var input = Parser_Primitives_Core.Parser.Input.Bytes(utf8: pattern)
-        self = try Glob.Pattern.Parser<Parser_Primitives_Core.Parser.Input.Bytes>().parse(&input)
+        var input = Byte.Input(utf8: pattern)
+        self = try Glob.Pattern.Parser<Byte.Input>().parse(&input)
     }
 }

@@ -10,6 +10,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import Collection_Primitives
+public import Byte_Parser_Primitives
 public import Parser_Primitives
 
 extension Glob.Pattern {
@@ -47,8 +48,8 @@ extension Glob.Pattern {
     /// responsibility when composing within a larger grammar.
     ///
     /// ```swift
-    /// var input = Parser_Primitives_Core.Parser.Input.Bytes(utf8: "src/*.swift")
-    /// let pattern = try Glob.Pattern.Parser<Parser.Input.Bytes>().parse(&input)
+    /// var input = Byte.Input(utf8: "src/*.swift")
+    /// let pattern = try Glob.Pattern.Parser<Byte.Input>().parse(&input)
     /// // pattern.segments.count == 2
     /// ```
     public struct Parser<Input: Collection.Slice.`Protocol` & Swift.Collection>: Swift.Sendable
