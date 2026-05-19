@@ -11,6 +11,7 @@
 
 public import Collection_Primitives
 public import Byte_Parser_Primitives
+internal import Byte_Primitives_Standard_Library_Integration
 public import Parser_Primitives
 
 extension Glob.Pattern {
@@ -53,7 +54,7 @@ extension Glob.Pattern {
     /// // pattern.segments.count == 2
     /// ```
     public struct Parser<Input: Collection.Slice.`Protocol` & Swift.Collection>: Swift.Sendable
-    where Input: Swift.Sendable, Input.Element == Swift.UInt8 {
+    where Input: Swift.Sendable, Input.Element == Byte {
         /// Creates a glob-pattern byte-stream parser.
         ///
         /// Stateless — instances are interchangeable.

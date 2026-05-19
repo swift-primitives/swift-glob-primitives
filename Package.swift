@@ -47,6 +47,7 @@ let package = Package(
     dependencies: [
         .package(path: "../swift-array-primitives"),
         .package(path: "../swift-ascii-primitives"),
+        .package(path: "../swift-byte-primitives"),
         .package(path: "../swift-byte-parser-primitives"),
         .package(path: "../swift-parser-primitives"),
     ],
@@ -56,6 +57,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Array Dynamic Primitives", package: "swift-array-primitives"),
                 .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
+                .product(name: "Byte Primitives Standard Library Integration", package: "swift-byte-primitives"),
                 .product(name: "Byte Parser Primitives", package: "swift-byte-parser-primitives"),
                 .product(name: "Parser Primitives", package: "swift-parser-primitives"),
             ]
