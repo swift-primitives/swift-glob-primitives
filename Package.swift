@@ -45,11 +45,11 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../swift-array-primitives"),
-        .package(path: "../swift-ascii-primitives"),
-        .package(path: "../swift-byte-primitives"),
-        .package(path: "../swift-byte-parser-primitives"),
-        .package(path: "../swift-parser-primitives"),
+        .package(url: "https://github.com/swift-primitives/swift-array-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-ascii-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-byte-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-byte-parser-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-parser-primitives.git", branch: "main"),
     ],
     targets: [
         .target(
