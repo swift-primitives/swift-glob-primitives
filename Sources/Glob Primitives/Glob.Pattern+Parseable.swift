@@ -9,7 +9,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Array_Dynamic_Primitives
+public import Array_Primitives
 public import Byte_Parser_Primitives
 public import Parser_Primitives
 

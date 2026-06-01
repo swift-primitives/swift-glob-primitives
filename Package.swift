@@ -55,7 +55,7 @@ let package = Package(
         .target(
             name: "Glob Primitives",
             dependencies: [
-                .product(name: "Array Dynamic Primitives", package: "swift-array-primitives"),
+                .product(name: "Array Primitives", package: "swift-array-primitives"),
                 .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
                 .product(name: "Byte Primitives Standard Library Integration", package: "swift-byte-primitives"),
                 .product(name: "Byte Parser Primitives", package: "swift-byte-parser-primitives"),
