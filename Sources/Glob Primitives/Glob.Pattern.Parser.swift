@@ -53,7 +53,7 @@ extension Glob.Pattern {
     /// let pattern = try Glob.Pattern.Parser<Byte.Input>().parse(&input)
     /// // pattern.segments.count == 2
     /// ```
-    public struct Parser<Input: Collection.Slice.`Protocol` & Swift.Collection>: Swift.Sendable
+    public struct Parser<Input: Collection.Slice.`Protocol`>: Swift.Sendable
     where Input: Swift.Sendable, Input.Element == Byte {
         /// Creates a glob-pattern byte-stream parser.
         ///
