@@ -46,6 +46,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-primitives/swift-array-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-shared-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-buffer-linear-primitives.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-ascii-primitives.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-byte-primitives.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-byte-parser-primitives.git", branch: "main"),
@@ -56,6 +58,9 @@ let package = Package(
             name: "Glob Primitives",
             dependencies: [
                 .product(name: "Array Primitives", package: "swift-array-primitives"),
+                .product(name: "Shared Primitive", package: "swift-shared-primitives"),
+                .product(name: "Buffer Linear Primitive", package: "swift-buffer-linear-primitives"),
+                .product(name: "Buffer Linear Primitives", package: "swift-buffer-linear-primitives"),
                 .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
                 .product(name: "Byte Primitives Standard Library Integration", package: "swift-byte-primitives"),
                 .product(name: "Byte Parser Primitives", package: "swift-byte-parser-primitives"),
