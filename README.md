@@ -84,7 +84,7 @@ Literal content is stored as UTF-8 bytes in `Glob.Segment` and `Glob.Atom`, so p
 ## Community
 
 <!-- BEGIN: discussion -->
-*Discussion thread will be created at first public flip.*
+*Discussion thread will be created at first public release.*
 <!-- END: discussion -->
 
 ## License
