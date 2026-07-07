@@ -73,6 +73,12 @@ let package = Package(
                 "Glob Primitives",
             ]
         ),
+        .testTarget(
+            name: "Glob Primitives Tests",
+            dependencies: [
+                "Glob Primitives",
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
