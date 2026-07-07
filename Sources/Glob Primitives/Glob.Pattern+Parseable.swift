@@ -10,10 +10,10 @@
 // ===----------------------------------------------------------------------===//
 
 public import Array_Primitives
-public import Ownership_Shared_Primitive
 public import Buffer_Linear_Primitive
 public import Buffer_Linear_Primitives
 public import Byte_Parser_Primitives
+public import Ownership_Shared_Primitive
 public import Parser_Primitives
 
 extension Glob.Pattern: Parseable {
@@ -40,7 +40,7 @@ extension Glob.Pattern: Parseable {
     /// validated by
     /// `swift-institute/Experiments/parseable-associatedtype-implements/`
     /// (2026-05-14).
-    @_implements(Parseable, Parser)
+    @_implements(Parseable,Parser)
     public typealias _ParseableParser = Glob_Primitives.Glob.Pattern.Parser<Byte.Input>
 
     /// The canonical glob-pattern byte-stream parser instance.

@@ -10,10 +10,10 @@
 // ===----------------------------------------------------------------------===//
 
 public import Array_Primitives
-public import Ownership_Shared_Primitive
 public import Buffer_Linear_Primitive
 public import Buffer_Linear_Primitives
 public import Byte_Parser_Primitives
+public import Ownership_Shared_Primitive
 public import Parser_Primitives
 
 extension Glob {
@@ -70,6 +70,6 @@ extension Glob.Pattern {
     @inlinable
     public init(_ pattern: Swift.String) throws(Glob.Error) {
         var input = Byte.Input(utf8: pattern)
-        self = try Glob.Pattern.Parser<Byte.Input>().parse(&input)
+        self = try Self.Parser<Byte.Input>().parse(&input)
     }
 }

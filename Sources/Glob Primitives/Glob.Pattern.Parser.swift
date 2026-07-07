@@ -9,9 +9,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Collection_Primitives
 public import Byte_Parser_Primitives
 internal import Byte_Primitives_Standard_Library_Integration
+public import Collection_Primitives
 public import Parser_Primitives
 
 extension Glob.Pattern {
@@ -160,16 +160,15 @@ extension Glob.Pattern.Parser: Parser_Primitives.Parser.`Protocol` {
 
             case "\\":
                 // Escape: next character is literal
-                if let next = iterator.next() {
-                    position += 1
-                    appendUTF8(next, to: &literal)
-                } else {
+                guard let next = iterator.next() else {
                     throw .invalidPattern(
                         pattern: segment,
                         position: position,
                         reason: .unexpectedEnd
                     )
                 }
+                position += 1
+                appendUTF8(next, to: &literal)
 
             default:
                 appendUTF8(scalar, to: &literal)
@@ -217,28 +216,27 @@ extension Glob.Pattern.Parser: Parser_Primitives.Parser.`Protocol` {
         var hasContent = false  // Track if class has any content (for ] detection after ranges)
 
         // Check for negation
-        if let first = iterator.next() {
-            position += 1
-            if first == "!" || first == "^" {
-                negated = true
-            } else if first == "]" {
-                // Empty class is invalid
-                throw .invalidPattern(
-                    pattern: pattern,
-                    position: position,
-                    reason: .emptyClass
-                )
-            } else {
-                previousScalar = first
-                scalars.insert(first.value)
-                hasContent = true
-            }
-        } else {
+        guard let first = iterator.next() else {
             throw .invalidPattern(
                 pattern: pattern,
                 position: position,
                 reason: .unterminatedClass
             )
+        }
+        position += 1
+        if first == "!" || first == "^" {
+            negated = true
+        } else if first == "]" {
+            // Empty class is invalid
+            throw .invalidPattern(
+                pattern: pattern,
+                position: position,
+                reason: .emptyClass
+            )
+        } else {
+            previousScalar = first
+            scalars.insert(first.value)
+            hasContent = true
         }
 
         while let scalar = iterator.next() {
@@ -265,18 +263,17 @@ extension Glob.Pattern.Parser: Parser_Primitives.Parser.`Protocol` {
             if expectingRangeEnd {
                 // This is the end of a range
                 if let start = previousScalar {
-                    if start.value <= scalar.value {
-                        ranges.append(start.value...scalar.value)
-                        // Remove the start from individual scalars since it's now in a range
-                        scalars.remove(start.value)
-                        hasContent = true
-                    } else {
+                    guard start.value <= scalar.value else {
                         throw .invalidPattern(
                             pattern: pattern,
                             position: position,
                             reason: .invalidRange
                         )
                     }
+                    ranges.append(start.value...scalar.value)
+                    // Remove the start from individual scalars since it's now in a range
+                    scalars.remove(start.value)
+                    hasContent = true
                 }
                 expectingRangeEnd = false
                 previousScalar = nil

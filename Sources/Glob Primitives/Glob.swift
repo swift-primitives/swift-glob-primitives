@@ -54,6 +54,7 @@ extension Glob {
                 ASCII.Character.Graphic.leftBracket,  // [
                 ASCII.Character.Graphic.reverseSlant:  // \
                 return true
+
             default:
                 continue
             }
